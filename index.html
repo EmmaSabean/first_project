@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #greeting {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Personalized Webpage!</h1>
+    <p>Please enter your name:</p>
+    <input type="text" id="nameInput" placeholder="Your name">
+    <button onclick="updateGreeting()">Submit</button>
+    <p id="greeting"></p>
+    <script>
+        function updateGreeting() {
+            const name = document.getElementById('nameInput').value;
+            const greeting = document.getElementById('greeting');
+            greeting.textContent = `Hello, ${name}! Welcome to my webpage.`;
+        }
+    </script>
+</body>
+</html>
