@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,8 @@
 
     <style>
         body {
+            background-color: #f0f8ff;
+            /* Light blue background */
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
@@ -14,20 +17,49 @@
         input {
             padding: 10px;
             font-size: 16px;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
         }
+        input:focus {
+            border-color: #4CAF50; 
+            /* Green */
+            outline: none;
+        }
+
         button {
-            padding: 10px;
+            padding: 10px 20px;
             font-size: 16px;
             margin-top: 10px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            /* Green */
+            color: white;
+            border: none;
+            cursor: pointer;
         }
+
+        button:hover {
+            background-color: #45a049;
+            /* Darker green */
+        }
+
         #greeting {
             margin-top: 20px;
             font-size: 20px;
             font-weight: bold;
             color: #333;
+            opacity: 0;
+            transition: opacity 3s ease-in-out; /* Adjust timing here */
+        }
+
+
+        .visible {
+            opacity: 1;
         }
     </style>
 </head>
+
 <body>
     <h1>Welcome to My Personalized Webpage!</h1>
     <p>Please enter your name:</p>
@@ -36,10 +68,17 @@
     <p id="greeting"></p>
     <script>
         function updateGreeting() {
+            console.log("Button clicked!");
             const name = document.getElementById('nameInput').value;
             const greeting = document.getElementById('greeting');
-            greeting.textContent = `Hello, ${name}! Welcome to my webpage.`;
+            greeting.textContent = "Hello, " + name + "! Welcome to my webpage.";
+            greeting.style.display = 'block';
+            greeting.style.visibility = 'visible';
+            greeting.style.opacity = 1;
         }
+
+
     </script>
 </body>
+
 </html>
